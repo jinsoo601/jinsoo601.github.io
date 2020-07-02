@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My Diary - July 1st, 2020</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1>July 1st, 2020</h1>
+            <pre>
+                <code class="language-javascript">
+import Person from "person";
+import { SamsungTv, Laptop } from "entertainment";
+
+const jinsoo = new Person("Jinsoo");
+const sally = new Person("Sally");
+
+console.log(new Date().toLocaleTimeString()) // "1:30:00 PM"
+jinsoo.wakeup();
+jinsoo.eat("grape");
+
+const tv = new SamsungTv();
+tv.on();
+tv.selectPlatform("YouTube");
+while (sally.isWorking()) {
+    tv.playRandom()
+}
+tv.off();
+
+const laptop = new Laptop();
+laptop.start("League").then(async (league) => {
+    let hasWon = false;
+    while (!hasWon) {
+        hasWon = await league.play(); // returns true if won, false if lost
+    };
+});
+
+const food = jinsoo.cook("된장찌개");
+jinsoo.eatWithRoommates(food);
+
+jinsoo.takeWalkTo("The Elevated Acre");
+jinsoo.buy("beer");
+jinsoo.drink("beer");
+console.log(new Date().toLocaleTimeString()) // "1:00:00 AM"
+jinsoo.sleep();
+                </code>
+            </pre>
+        </div>
+    </body>
+</html>
