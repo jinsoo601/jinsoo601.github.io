@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My Diary - July 2st, 2020</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1>July 2st, 2020</h1>
+            <pre>
+                <code class="language-javascript">
+import Person from "person";
+import { laundry } from "chores";
+import { Restaurant } from "neighborhood";
+import { League } from "games";
+
+const jinsoo = new Person("Jinsoo");
+jinsoo.wakeup();
+
+if (laundry.isFull()) {
+    let washCycle = jinsoo.putLaundryInMachine();
+    washCycle.then(cleanClothes => {
+        jinsoo.pickUpLaundry(cleanClothes);
+    });
+}
+jinsoo.doStretching(); // while laundry is running
+
+const restaurant = Restaurant.visit("Sauce and Barrel");
+const MENU = restaurant.sit();
+restaurant.getServer().order([
+    MENU.PANCETTA_AND_EGG_PIZZA,
+    MENU.SQUID_INK_PASTA,
+    MENU.FRIED_CALAMARI,
+    MENU.WATERMELON_MOJITO,
+    MENU.PROSECCO,
+    MENU.MARGARITA
+]).then(food => {
+    jinsoo.eatWithRoommates(food);
+});
+
+League.login(
+    jinsoo.getLeagueId(),
+    jinsoo.getLeaguePw()
+).then(async (match) => {
+    let victoryCount = 0;
+    while (victoryCount < 3) {
+        const matchResult = await match.joinAndPlay();
+        if (matchResult === VICTORY) victoryCount++;
+    }
+    League.logout();
+});
+
+jinsoo.eatWithRoommates("하늘이가 가져온 김볶");
+jinsoo.sleep();
+                </code>
+            </pre>
+        </div>
+    </body>
+</html>
