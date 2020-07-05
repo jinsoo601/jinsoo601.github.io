@@ -7,52 +7,46 @@
     </head>
     <body>
         <div class="container">
-            <h1>July 2nd, 2020</h1>
+            <h1>July 3rd, 2020</h1>
             <pre>
                 <code class="language-javascript">
 import Person from "person";
-import { laundry } from "chores";
+import { TASKS } from "chores";
 import { Restaurant } from "neighborhood";
 import { League } from "games";
+import Party from "party";
 
 const jinsoo = new Person("Jinsoo");
-jinsoo.wakeup();
+jinsoo.wakeup(); // 11:00 AM
 
-if (laundry.isFull()) {
-    let washCycle = jinsoo.putLaundryInMachine();
-    washCycle.then(cleanClothes => {
-        jinsoo.pickUpLaundry(cleanClothes);
-    });
-}
-jinsoo.doStretching(); // while laundry is running
+jinsoo.do(TASKS.CLEAN_BATHTUB);
+jinsoo.drink("Sally's coffee");
 
-const restaurant = Restaurant.visit("Sauce and Barrel");
-const MENU = restaurant.sit();
-restaurant.getServer().order([
-    MENU.PANCETTA_AND_EGG_PIZZA,
-    MENU.SQUID_INK_PASTA,
-    MENU.FRIED_CALAMARI,
-    MENU.WATERMELON_MOJITO,
-    MENU.PROSECCO,
-    MENU.MARGARITA
-]).then(food => {
-    jinsoo.eatWithRoommates(food);
-});
+// lunch
+const restaurant = Restaurant.visit("BaoBao");
+const MENU = restaurant.viewMenu();
+const foodToOrder = [{ name: MENU.BAOBAO_NOODLE, QUANTITY: 3}, { name: MENU.BAOBAO_RICE, QUANTITY: 1}];
+restaurant
+    .order(foodToOrder)
+    .pickUp()
+    .eat();
 
 League.login(
     jinsoo.getLeagueId(),
     jinsoo.getLeaguePw()
 ).then(async (match) => {
     let victoryCount = 0;
-    while (victoryCount < 3) {
+    while (victoryCount < 1) {
         const matchResult = await match.joinAndPlay();
         if (matchResult === VICTORY) victoryCount++;
     }
     League.logout();
 });
 
-jinsoo.eatWithRoommates("하늘이가 가져온 김볶");
-jinsoo.sleep();
+jinsoo.buy("Soju");
+const party = new Party("Sheon", "Yeseul", "Sally", "Linda", "Haneul", "Jinsoo");
+party.init();
+// fun stuff happens
                 </code>
             </pre>
         </div>
