@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My Diary - July 2st, 2020</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1>July 3rd, 2020</h1>
+            <pre>
+                <code class="language-javascript">
+import Person from "person";
+import { register, rentBike, returnBike } from "citibike";
+import subway from "subway";  
+
+const jinsoo = new Person("Jinsoo");
+jinsoo.wakeup(); // 10:00:00 AM
+const credential = register(jinsoo.getCardInfo());
+const bike = rentBike(credential);
+jinsoo.ride(bike, "Home", "Chelsea Park");
+returnBike(credential);
+
+// personal training
+const scott = new Person("Scott");
+scott.meet(jinsoo);
+scott.train(jinsoo);
+jinsoo.suffersInPain();
+jinsoo.ride(subway, "Chelsea Park", "Home");
+
+// worked out so was very hungry
+jinsoo.eat("Eel Onigiri");
+jinsoo.eat("Ramen and rice");
+jinsoo.eat("pizza");
+
+// league code too repetitive so will skip
+// ...
+
+jinsoo.eat("jinjinjjara");
+jinsoo.passout();
+                </code>
+            </pre>
+        </div>
+    </body>
+</html>
