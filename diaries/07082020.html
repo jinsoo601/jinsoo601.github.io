@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My Diary - July 8th, 2020</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1>July 8th, 2020</h1>
+            <pre>
+                <code class="language-javascript">
+// I realized my days are pretty repetitive, and I don't want to violate DRY principle, so I will only record unique events...
+const restaurant = Restaurant.visit("Harry's");
+const MENU = restaurant.sit();
+restaurant.getServer().order([
+    MENU.FILET_MIGNON,
+    MENU.BEEF_WELLINGTON,
+    MENU.BONE_IN_RIB_EYE,
+    MENU.HANGER_STEAK
+]).then(food => {
+    jinsoo.eatWithRoommates(food);
+});
+
+jinsoo.buy("Gray Goose"); // to drink at home later
+// ...
+                </code>
+            </pre>
+        </div>
+    </body>
+</html>
