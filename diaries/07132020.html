@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My Diary - July 13th, 2020</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1>July 13th, 2020</h1>
+            <pre>
+                <code class="language-javascript">
+wakeup(); // 10:00:00 AM
+visit("Ophthalmologist's Office");
+cook("Leftover 파전").then(eat);
+
+const reservation = makeReservation("Osh Hair", { time: "15:00:00" });
+reservation.go();
+// new haircut feels good
+// sally likes it
+
+study("HTML5 Canvas drawing");
+cook("김치볶음밥").then(eat);
+
+League.login(
+    getLeagueId(),
+    getLeaguePw()
+).then(async (client) => {
+    let victoryCount = 0;
+    while (victoryCount < 3) {
+        const match = await client.findMatch();
+        const matchResult = await match.joinAndPlay();
+        if (matchResult === VICTORY) victoryCount++;
+    }
+    League.logout();
+});
+
+sleep(); 02:00:00 AM
+                </code>
+            </pre>
+        </div>
+    </body>
+</html>
