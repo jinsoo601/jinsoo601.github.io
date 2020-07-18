@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My Diary - July 17th, 2020</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1>July 17th, 2020</h1>
+            <pre>
+                <code class="language-javascript">
+import { laundry } from "chores";
+import { League, POE } from "games";
+
+wakeup(); // 12:00:00 AM
+eat("진진짜라");
+
+if (laundry.isFull()) {
+    let washCycle = laundry.startWashCycle();
+    washCycle.then(cleanClothes => {
+        laundry.pickUp(cleanClothes);
+    });
+}
+
+/****** most productive part of the day ******/
+brainstorm("Using QR code at restaurants to assist in social distancing"); // this took about 2 hours
+/*********************************************/
+
+// what should POE code look like?
+// I defeated Kitava at Act 5 and moved onto Part 2.
+POE.play();
+
+League.login(
+    getLeagueId(),
+    getLeaguePw()
+).then(async (client) => {
+    let victoryCount = 0;
+    while (victoryCount < 1) {
+        const match = await client.findMatch();
+        const matchResult = await match.joinAndPlay();
+        if (matchResult === VICTORY) victoryCount++;
+    }
+    League.logout();
+});
+
+sleep(); 05:00:00 AM
+                </code>
+            </pre>
+        </div>
+    </body>
+</html>
